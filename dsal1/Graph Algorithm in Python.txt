@@ -1,0 +1,156 @@
+                                              Data structure and Algorithm in Python
+
+* Why we should learn Data structures and Algorithms?
+> To solve programming problems like a linked list or balancing a binary tree
+> In software development, use it for solving programming problems like-
+I. We can think about a problem systematically and solve it systematically step-by-step.
+II. Can envision different inputs, output, and edge cases for program we write.
+III. Most importantly, we can convert our thoughts and ideas into a working code that is also readable. 
+* A systematic strategy we shall apply for solving problems :---
+> State the problem clearly. Identify the input & output formats.
+> Come up with some example inputs, outputs. Try to cover all edges cases.
+> Come up with a correct solution for the problems .state in plain English.
+> Analyze the algorithm’s complexity and identify inefficiencies, if any.
+
+* Problems 
+              QUESTION 1: Alice has some cards with numbers written on them. She arranges the cards in decreasing order, and lays them out face down in a sequence on a table. She challenges Bob to pick out the card containing a given number by turning over as few cards as possible. Write a function to help Bob locate the card.
+
+* Solution 
+1. State the problem clearly. Identify the input & output formats.
+You will often encounter detailed word problems in coding challenges and interviews. The first step is to state the problem clearly and precisely in abstract terms.
+
+In this case, for instance, we can represent the sequence of cards as a list of numbers. Turning over a specific card is equivalent to accessing the value of the number at the corresponding position the list.
+
+
+
+* Problem 
+      We need to write a program to find the position of a given number in a list of numbers arranged in decreasing order. We also need to minimize the number of times we access elements from the list.
+* Input  
+1. Cards: A list of numbers sorted in decreasing order. E.g. [13, 11, 10, 7, 4, 3, 1, 0]
+2. Query: A number, whose position in the array is to be determined. E.g. 7
+
+* Output
+                 Position: The position of query in the list cards. E.g. 3 in the above case the 
+                 above case (counting from 0).
+
+* The _space complexity_ is some constant `c'` (independent of `N`), since we just need a single variable `position` to iterate through the array, and it occupies a constant space in the computer's memory (RAM).
+
+> **Big O Notation**: Worst-case complexity is often expressed using the Big O notation. In the Big O, we drop fixed constants and lower powers of variables to capture the trend of relationship between the size of the input and the complexity of the algorithm i.e. if the complexity of the algorithm is `cN^3 + dN^2 + eN + f`, in the Big O notation it is expressed as **O(N^3)**
+
+* Thus, the time complexity of linear search is **O(N)** and its space complexity is **O(1)**.
+### 9. Analyze the algorithm's complexity and identify inefficiencies, if any.
+
+Once again, let's try to count the number of iterations in the algorithm. If we start out with an array of N elements, then each time the size of the array reduces to half for the next iteration, until we are left with just 1 element.
+
+Initial length - `N`
+
+Iteration 1 - `N/2`
+
+Iteration 2 - `N/4` i.e. `N/2^2`
+
+Iteration 3 - `N/8` i.e. `N/2^3`
+
+...
+
+Iteration k - `N/2^k`
+
+
+Since the final length of the array is 1, we can find the 
+
+`N/2^k = 1`
+
+Rearranging the terms, we get
+
+`N = 2^k`
+
+Taking the logarithm
+
+`k = log N`
+
+Where `log` refers to log to the base 2. Therefore, our algorithm has the time complexity **O(log N)**. This fact is often stated as: binary search _runs_ in logarithmic time. You can verify that the space complexity of binary search is **O(1)**.
+
+
+
+
+
+
+
+
+
+                                       Binary search
+
+Generic Binary Search
+
+Here is the general strategy behind binary search, which is applicable to a variety of problems:
+
+1. Come up with a condition to determine whether the answer lies before, after or at a given position
+1. Retrieve the midpoint and the middle element of the list.
+2. If it is the answer, return the middle position as the answer.
+3. If answer lies before it, repeat the search with the first half of the list
+4. If the answer lies after it, repeat the search with the second half of the list.
+
+Linked List
+
+A linked list is a _data structure_ used for storing a sequence of elements. It's data with some structure (the sequence).
+
+
+We will implement linked lists, which support the following operations:
+
+- Create a list with given elements
+- Display the elements in a list
+- Find the number of elements in a list
+- Retrieve the element at a given position
+- Add or remove element(s)
+- (can you think of anymore?)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+* Graph: - A unique data structure in programming that consists of finite sets of nodes or vertices and a set of edges that connect these vertices to them.
+* Types of graph
+
+> Order: Order defines the total number of vertices present in the graph.
+> Size: Size defines the number of edges present in the graph.
+> Weighted graph: A graph having value or weight of vertices.
+> 
+> Unweighted graph: A graph having no value or weight of vertices.
+> 
+> Directed graph: A graph having a direction indicator.
+> 
+> Undirected graph: A graph where no directions are defined.
+
+
+* BFS (BREADTH FIRST SEARCH): To start at a particular vertex and the algorithm tries to visit all the neighbors at the given depth before moving on to the next level of traversal of vertices. 
+> Algorithm
+* Start putting anyone vertices from the graph at the back of the queue.
+* First, move the front queue item and add it to the list of the visited node.
+* Next, create nodes of the adjacent vertex of that list and add them, which have not been visited yet.
+* Keep repeating steps two and three until the queue is found to be empty.
+* SHORTEST PATH and SPANNING TREE is the main application of breadth first search.
+
+* DFS(Depth-first search) : In depth-first-search (DFS), you start by particularly from the vertex and explore as much as you along all the branches before backtracking. In DFS, it is essential to keep note of the tracks of visited nodes, and for this, you use stack data structure.
+
+> Stack used lifo.
+
+> Algorithm
+
+* Start by putting one of the vertexes of the graph on the stack’s top.
+* Put the top item of the stack and add it to the visited vertex list.
+* Create a list of all the adjacent nodes of the vertex and then add those nodes to the unvisited at the top of the stack.
+* Keep repeating steps 2 and 3, and the stack becomes empty.
+* 
+                         GRAPH  
+
